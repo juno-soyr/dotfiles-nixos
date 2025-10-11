@@ -30,7 +30,8 @@
 
       input = {
         "*" = {
-          xkb_layout = "es";
+          xkb_layout = "es,us";
+          xkb_switch_layout = "Control_L";
         };
       };
       output = {

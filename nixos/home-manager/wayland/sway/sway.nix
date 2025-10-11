@@ -27,6 +27,7 @@
           command = "${pkgs.waybar}/bin/waybar";
         }
       ];
+      
 
       input = {
         "*" = {

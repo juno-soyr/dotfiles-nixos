@@ -39,7 +39,7 @@
         ];
 
         "custom/launcher" = {
-          format = "<span size='x-large'>  </span>";
+          format = "<span size='x-large'>S</span>";
           "on-click" = "exec ${pkgs.rofi-wayland}/bin/rofi-wayland --show run";
           tooltip = false;
         };

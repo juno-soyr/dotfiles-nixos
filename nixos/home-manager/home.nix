@@ -96,6 +96,7 @@
     bitwarden
     discord
     pavucontrol
+    rofi-wayland
   ];
 
   # basic configuration of git, please change to your own

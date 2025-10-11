@@ -31,7 +31,7 @@
       input = {
         "*" = {
           xkb_layout = "es,us";
-          xkb_switch_layout = "\"Control_L\"";
+          xkb_options = "grp:rctrl_toggle";
         };
       };
       output = {

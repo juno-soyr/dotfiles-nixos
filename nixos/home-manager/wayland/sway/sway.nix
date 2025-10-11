@@ -3,6 +3,7 @@
   nixpkgs,
   home-manager,
   pkgs,
+  lib,
   ...
 }: {
   wayland.windowManager.sway = let
@@ -15,6 +16,9 @@
     config = rec {
       modifier = "Mod4"; # Super key
       terminal = "alacritty";
+      keybindings = lib.mkOptionDefault {
+        "${modifier}+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun";
+      };
       window = {
         border = 1;
       };
@@ -27,7 +31,6 @@
           command = "${pkgs.waybar}/bin/waybar";
         }
       ];
-      
 
       input = {
         "*" = {

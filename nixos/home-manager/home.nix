@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./wayland/sway/sway.nix
+    ./wayland/niri/niri.nix
     ./wayland/modules/waybar/waybar.nix
   ];
   home.username = "soyr";

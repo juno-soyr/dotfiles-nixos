@@ -10,6 +10,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../login-manager.nix
+    ./../modules/steam.nix
   ];
 
   # Bootloader.
@@ -23,6 +24,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   hardware.graphics.enable = true;
+  hardware.opengl.driSupport32Bit = true;
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {

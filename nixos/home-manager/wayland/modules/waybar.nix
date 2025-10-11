@@ -17,13 +17,12 @@
           margin-right = 7;
           margin-left = 7;
 
-          modules-left = ["clock" "niri/workspaces" "mpris"];
-          modules-center = ["privacy" "niri/window" "group/system-metrics"];
+          modules-left = ["clock" "sway/workspaces" "mpris"];
+          modules-center = ["privacy" "group/system-metrics"];
           modules-right = [
             "battery"
             "power-profiles-daemon"
             "pulseaudio"
-            "niri/language"
             "tray"
             "custom/notification"
             "custom/power"
@@ -49,20 +48,7 @@
 
           "custom/power" = {
             format = "⏻ ";
-            on-click = "eww open --toggle pwrmnu";
-          };
-
-          "niri/language" = {
-            format-ar = " عر ";
-            format-en = " EN ";
-            on-click = "niri msg action switch-layout next";
-          };
-
-          "niri/window" = {
-            format = "   {title} ";
-            rewrite = {
-              "(.*)~ " = "Terminal";
-            };
+            on-click = "wlogout";
           };
 
           tray = {
@@ -148,14 +134,13 @@
           };
 
           clock = {
-            on-click = "eww open --toggle calendarwidget";
             interval = 60;
             tooltip = true;
             format = "{:%I : %M %p}";
             tooltip-format = "{:%Y-%m-%d}";
           };
 
-          "niri/workspaces" = {
+          "sway/workspaces" = {
             persistent-workspaces = {
               "*" = 5;
             };

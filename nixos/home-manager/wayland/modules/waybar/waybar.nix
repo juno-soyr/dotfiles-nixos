@@ -164,6 +164,6 @@
       };
     };
 
-    style = builtins.ReadFile ./style.css;
+    style = builtins.readFile ./style.css;
   };
 }

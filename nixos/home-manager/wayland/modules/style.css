@@ -1,0 +1,73 @@
+* {
+  font-family: "Adwaita Sans";
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: rgba(36, 40, 59, 1);
+  color: #ffffff;
+  border-radius: 0px;
+  margin: 0;
+  border: none;
+}
+
+#workspaces {
+  margin: 0px 1px;
+  border-radius: 0px;
+  border: none;
+}
+
+#workspaces button {
+  color: #ffffff;
+  border-radius: 0px;
+  padding: 0 5px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+#workspaces button.focused {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0px;
+}
+
+#workspaces button.urgent {
+  background-color: #000000;
+  border-radius: 0px;
+}
+
+#clock,
+#bluetooth,
+#tray,
+#battery,
+#network,
+#pulseaudio {
+  padding: 0 10px;
+  color: #ffffff;
+}
+
+#battery.charging {
+  color: #00bb13;
+}
+
+#battery.warning:not(.charging) {
+  color: #ffb300;
+}
+
+#battery.critical:not(.charging) {
+  color: #d11500;
+}
+
+#network.disconnected {
+  color: #c10000;
+}
+
+#pulseaudio.muted {
+  color: #a8a8a8;
+}
+
+#custom-spotify {
+ color: #A6E3A1;
+ padding-left: 5px;
+ padding-right: 5px;
+}

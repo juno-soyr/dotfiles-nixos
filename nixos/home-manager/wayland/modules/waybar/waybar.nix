@@ -80,7 +80,6 @@
 
         network = {
           interval = 5;
-          "format-wifi" = "{bandwidthDownBits:>} 󰶡 {bandwidthUpBits:>} 󰶣";
           "format-ethernet" = " ";
           "format-disconnected" = "⚠";
           "tooltip-format" = "{essid} ({signalStrength}%)\n{ifname}: {ipaddr}";
@@ -165,8 +164,6 @@
       };
     };
 
-    style = ''
-      /* Optional CSS style block */
-    '';
+    style = builtins.ReadFile ./style.css;
   };
 }

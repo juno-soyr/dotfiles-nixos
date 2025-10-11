@@ -5,7 +5,7 @@
 }: {
   imports = [
     ./wayland/sway/sway.nix
-    ./wayland/modules/waybar.nix
+    ./wayland/modules/waybar/waybar.nix
   ];
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
@@ -95,6 +95,7 @@
     # my stuff
     bitwarden
     discord
+    pavucontrol
   ];
 
   # basic configuration of git, please change to your own

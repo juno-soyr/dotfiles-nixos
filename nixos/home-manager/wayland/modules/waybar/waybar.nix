@@ -17,16 +17,16 @@
         "margin-right" = 10;
         spacing = 1;
 
-        "modules-left" = [
+        modules-left = [
           "custom/launcher"
           "mpris"
         ];
 
-        "modules-center" = [
+        modules-center = [
           "sway/workspaces"
         ];
 
-        "modules-right" = [
+        modules-right = [
           "pulseaudio"
           "cpu"
           "memory"
@@ -40,7 +40,7 @@
 
         "custom/launcher" = {
           format = "<span size='x-large'>  </span>";
-          "on-click" = "exec rofi --show run";
+          "on-click" = "exec ${pkgs.rofi-wayland}/bin/rofi-wayland --show run";
           tooltip = false;
         };
 

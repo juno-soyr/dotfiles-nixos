@@ -58,6 +58,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   programs.sway.enable = true;
+  programs.niri.enable = true;
   # Configure console keymap
   console.keyMap = "es";
 

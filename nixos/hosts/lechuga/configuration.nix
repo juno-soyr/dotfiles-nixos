@@ -106,6 +106,7 @@
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
+    nerd-fonts.symbols-only
     nerd-fonts.droid-sans-mono
   ];
   # Some programs need SUID wrappers, can be configured further or are

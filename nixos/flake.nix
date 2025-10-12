@@ -16,10 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     cursor-theme.url = "github:mrcjkb/volantes-cursors-material";
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -53,7 +49,6 @@
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = specialArgs;
           }
-          stylix.nixosModules.stylix
         ];
       };
     };

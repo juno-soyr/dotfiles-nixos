@@ -1,8 +1,0 @@
-{
-  self,
-  nixpkgs,
-  config,
-  pkgs,
-  ...
-}: {
-}

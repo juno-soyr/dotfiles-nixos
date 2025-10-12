@@ -23,7 +23,6 @@
     nixpkgs,
     home-manager,
     cursor-theme,
-    swayfx,
     ...
   } @ inputs: {
     nixosConfigurations = {

@@ -100,6 +100,7 @@
     pavucontrol
     alejandra
     tokyo-night-gtk
+    xwayland-satellite
   ];
 
   # basic configuration of git, please change to your own

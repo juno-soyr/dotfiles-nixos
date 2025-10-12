@@ -215,7 +215,7 @@ window,
 
 
 /* Show Window Control Button */
-.titlebar-buttonbox-container { display: -moz-inline-box !important; }
+.titlebar-buttonbox-container { display: none; }
 
 
 /* remove "padding" left and right from tabs */

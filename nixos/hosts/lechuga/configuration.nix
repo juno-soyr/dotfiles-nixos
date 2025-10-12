@@ -108,6 +108,7 @@
     nerd-fonts.iosevka
     nerd-fonts.symbols-only
     nerd-fonts.droid-sans-mono
+    nerd-fonts.jetbrains-mono
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

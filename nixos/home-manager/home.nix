@@ -14,7 +14,6 @@
   services.gnome-keyring.enable = true;
   gtk = {
     enable = true;
-    gtk3.extraConfig.gtk-decoration-layout = "menu:";
     theme = {
       name = "Tokyonight-Dark-B";
       package = pkgs.tokyo-night-gtk;
@@ -23,8 +22,8 @@
       name = "Tokyonight-Dark";
     };
     cursorTheme = {
-      name = "Volantes";
-      package = pkgs.volantes-cursors;
+      name = "Volantes Material Dark";
+      package = pkgs.volantes-cursors-material;
     };
   };
   home.sessionVariables.GTK_THEME = "Tokyonight-Dark-B";
@@ -98,7 +97,6 @@
     discord
     pavucontrol
     alejandra
-    volantes-cursors
     tokyo-night-gtk
   ];
 

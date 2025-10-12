@@ -15,18 +15,29 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    cursor-theme.url = "github:mrcjkb/volantes-cursors-material";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    cursor-theme,
     ...
   } @ inputs: {
     nixosConfigurations = {
       lechuga = nixpkgs.lib.nixosSystem rec {
         specialArgs = {inherit inputs;};
         modules = [
+          ({
+            config,
+            pkgs,
+            ...
+          }: {
+            nixpkgs.overlays = [
+              cursor-theme.overlay
+            ];
+          })
           ./hosts/lechuga/configuration.nix
           home-manager.nixosModules.home-manager
           {

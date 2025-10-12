@@ -17,7 +17,6 @@
         modules-left = ["sway/workspaces" "cpu"];
         modules-center = ["clock"];
         modules-right = [
-          "bluetooth"
           "network"
           "pulseaudio"
           "backlight"
@@ -32,20 +31,6 @@
             active = "";
             default = "";
           };
-        };
-
-        bluetooth = {
-          format = "󰂲";
-          format-on = "{icon}";
-          format-off = "{icon}";
-          format-connected = "{icon}";
-          format-icons = {
-            on = "󰂯";
-            off = "󰂲";
-            connected = "󰂱";
-          };
-          on-click = "blueman-manager";
-          tooltip-format-connected = "{device_enumerate}";
         };
 
         clock = {

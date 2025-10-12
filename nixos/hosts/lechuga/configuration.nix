@@ -10,7 +10,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../login-manager.nix
-    ./../modules/steam/steam.nix
+    ./../modules
   ];
 
   # Bootloader.

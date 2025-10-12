@@ -18,8 +18,7 @@
         spacing = 1;
 
         modules-left = [
-          "custom/launcher"
-          "mpris"
+          "sway/window"
         ];
 
         modules-center = [

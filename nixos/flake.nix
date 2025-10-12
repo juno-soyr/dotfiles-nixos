@@ -21,6 +21,7 @@
     self,
     nixpkgs,
     home-manager,
+    firefox-addons,
     ...
   } @ inputs: {
     nixosConfigurations = {

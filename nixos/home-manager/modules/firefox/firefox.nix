@@ -34,7 +34,7 @@
     profiles = {
       default = {
         id = 0;
-        name = "scientiac";
+        name = "soyr";
         isDefault = true;
 
         extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [

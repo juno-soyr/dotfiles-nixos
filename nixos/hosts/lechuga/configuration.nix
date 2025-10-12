@@ -91,7 +91,6 @@
     extraGroups = ["networkmanager" "wheel" "video"];
     packages = with pkgs; [
       #   kdePackages.kate
-      librewolf
     ];
   };
   # Allow unfree package

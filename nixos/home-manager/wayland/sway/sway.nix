@@ -25,6 +25,7 @@
         inner = 5;
         outer = 7;
       };
+
       window = {
         titlebar = false;
         border = 0;

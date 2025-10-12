@@ -12,13 +12,22 @@
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
-  home.pointerCursor = {
-    name = "Volantes Cursor";
-    package = pkgs.volantes-cursors;
-    size = 20;
-    gtk.enable = true;
-    sway.enable = true;
+  gtk = {
+    enable = true;
+    gtk3.extraConfig.gtk-decoration-layout = "menu:";
+    theme = {
+      name = "Tokyonight-Dark-B";
+      package = pkgs.tokyo-night-gtk;
+    };
+    iconTheme = {
+      name = "Tokyonight-Dark";
+    };
+    cursorTheme = {
+      name = "Volantes";
+      package = pkgs.volantes-cursors;
+    };
   };
+  home.sessionVariables.GTK_THEME = "Tokyonight-Dark-B";
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     neofetch
@@ -90,6 +99,7 @@
     pavucontrol
     alejandra
     volantes-cursors
+    tokyo-night-gtk
   ];
 
   # basic configuration of git, please change to your own

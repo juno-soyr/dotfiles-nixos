@@ -19,6 +19,9 @@
         modules-right = [
           "network"
           "pulseaudio"
+          "battery"
+          "memory"
+          "backlight"
           "custom/lock"
         ];
 

@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     cursor-theme.url = "github:mrcjkb/volantes-cursors-material";
-    swayfx = "github:WillPower3309/swayfx";
+    swayfx.url = "github:WillPower3309/swayfx";
   };
 
   outputs = {
@@ -24,6 +24,7 @@
     nixpkgs,
     home-manager,
     cursor-theme,
+    swayfx,
     ...
   } @ inputs: {
     nixosConfigurations = {

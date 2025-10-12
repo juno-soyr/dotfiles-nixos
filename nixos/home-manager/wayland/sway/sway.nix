@@ -3,6 +3,7 @@
   nixpkgs,
   home-manager,
   pkgs,
+  inputs,
   lib,
   ...
 }: {

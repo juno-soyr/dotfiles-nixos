@@ -99,7 +99,7 @@
         };
 
         userChrome = builtins.readFile ./simplefox/chrome/userChrome.css;
-        userContent = builtins.readFile ./simple/chrome/userContent.css;
+        userContent = builtins.readFile ./simplefox/chrome/userContent.css;
       };
     };
   };

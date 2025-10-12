@@ -1,7 +1,7 @@
 {
-  inputs,
   config,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -9,6 +9,7 @@
     ./wayland/modules/waybar/waybar.nix
     ./wayland/modules/fuzzel.nix
     ./modules/firefox/firefox.nix
+    ./modules/stylix.nix
   ];
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
@@ -169,12 +170,6 @@
   };
   home.file.".icons/default".source = "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
 
-  stylix.enable = true;
-  stylix.polarity = "dark";
-  stylix.image = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/whoisYoges/lwalpapers/refs/heads/PicturesOnly/wallpapers/b-010.jpg";
-    hash = "sha256-oUXpV05POhAypQHibL+kQUHN0MT6ny/+meH60YLfkjM=";
-  };
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

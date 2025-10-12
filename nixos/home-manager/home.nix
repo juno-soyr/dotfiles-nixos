@@ -103,6 +103,7 @@
     tokyo-night-gtk
     xwayland-satellite
     mako
+    network-manager-applet
   ];
 
   # basic configuration of git, please change to your own

@@ -13,13 +13,14 @@
         terminal = "alacritty";
         prompt = "❯   ";
         show-actions = "yes";
+        anchor = "left";
       };
       colors = {
         background = "282a36fa";
         selection = "3d4474fa";
         border = "fffffffa";
       };
-      border.radius = 20;
+      border.radius = 5;
     };
   };
 }

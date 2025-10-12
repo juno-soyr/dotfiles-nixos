@@ -62,7 +62,7 @@
               cursor-theme.overlay
             ];
           })
-          ./hosts/lechuga/configuration.nix
+          ./hosts/tomate/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

@@ -19,14 +19,13 @@
         modules-right = [
           "network"
           "pulseaudio"
-          "backlight"
-          "battery"
+          "custom/lock"
         ];
 
         "sway/workspaces" = {
           disable-scroll = false;
           all-outputs = true;
-          format = "{name}: {icon}";
+          format = "{name}{icon}";
           format-icons = {
             active = "";
             default = "";

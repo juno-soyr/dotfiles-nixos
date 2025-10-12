@@ -8,8 +8,8 @@
 }: {
   wayland.windowManager.sway = let
     src = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/whoisYoges/lwalpapers/PicturesOnly/wallpapers/b-158.jpg";
-      hash = "sha256-YNBjewJPtpxlvonnAOC+78X6QT3xFulayhNtq2jtDDA=";
+      url = "https://raw.githubusercontent.com/whoisYoges/lwalpapers/refs/heads/PicturesOnly/wallpapers/b-010.jpg";
+      hash = "sha256-oUXpV05POhAypQHibL+kQUHN0MT6ny/+meH60YLfkjM=";
     };
   in {
     enable = true;

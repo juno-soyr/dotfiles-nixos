@@ -87,7 +87,7 @@
 }
 
 #clock:hover {
-  background-color: rgba(153, 209, 219, 0.1);
+  background-color: rgba(153, 209, 219, 0.7);
 }
 
 /* Pomodoro Module */
@@ -128,12 +128,11 @@
 #pulseaudio,
 #backlight,
 #network,
-#custom-lock,
-#battery {
+#custom-lock{
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-  border-radius: 0;
+  margin: 5px 5px;
+  border-radius: 6px;
   box-shadow: none;
   min-width: 0;
   border: none;

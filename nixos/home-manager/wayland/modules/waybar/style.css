@@ -8,6 +8,8 @@ window#waybar {
   color: #ffffff;
   margin: 0;
   border: none;
+  border-radius: 50px;
+  transition-property: background-color;
 }
 
 #workspaces {

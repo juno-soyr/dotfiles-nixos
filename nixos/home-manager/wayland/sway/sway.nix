@@ -19,13 +19,16 @@
       keybindings = lib.mkOptionDefault {
         "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
       };
-      window = {
-        border = 1;
-      };
+
       gaps = {
         inner = 5;
         outer = 7;
       };
+      window = {
+        titlebar = false;
+        border = 5;
+      };
+
       bars = [
         {
           command = "${pkgs.waybar}/bin/waybar";

@@ -15,19 +15,14 @@
         extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           ublock-origin
           bitwarden
-          vimium
-          duckduckgo-privacy-essentials
-          sidebery
           sponsorblock
-          i-dont-care-about-cookies
           adaptive-tab-bar-colour
-          (youtube-recommended-videos.overrideAttrs (o: {meta = o.meta // {license = lib.licenses.mit;};}))
           (languagetool.overrideAttrs (o: {meta = o.meta // {license = lib.licenses.mit;};}))
         ];
 
         # http://kb.mozillazine.org/Category:Preferences
         settings = {
-          "browser.search.defaultenginename" = "duckduckgo";
+          "browser.search.defaultenginename" = "ddg";
           "browser.shell.checkDefaultBrowser" = false;
           "browser.shell.defaultBrowserCheckCount" = 1;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
@@ -62,44 +57,9 @@
           "browser.urlbar.suggest.addons" = false;
           "browser.urlbar.suggest.pocket" = false;
           "browser.urlbar.suggest.topsites" = false;
-          "browser.newtabpage.pinned" = [
-            {
-              title = "youtube";
-              url = "https://www.youtube.com/";
-            }
-            {
-              title = "scientiac";
-              url = "https://scientiac.space/";
-            }
-            {
-              title = "messenger";
-              url = "https://www.messenger.com/";
-            }
-            {
-              title = "search.nixos";
-              url = "https://search.nixos.org/";
-            }
-            {
-              title = "fosstodon";
-              url = "https://fosstodon.org/";
-            }
-            {
-              title = "gitlab";
-              url = "http://www.gitlab.com/";
-            }
-            {
-              title = "github";
-              url = "https://www.github.com/";
-            }
-            {
-              title = "chatgpt";
-              url = "https://chatgpt.com/";
-            }
-          ];
         };
 
         userChrome = builtins.readFile ./chrome/userChrome.css;
-        userContent = builtins.readFile ./chrome/userContent.css;
       };
     };
   };

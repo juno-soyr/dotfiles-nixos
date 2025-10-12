@@ -9,11 +9,12 @@
     ./wayland/modules/waybar/waybar.nix
     ./wayland/modules/fuzzel.nix
     ./modules/firefox/firefox.nix
-    ./modules/anyrun.nix
+    ./modules/anyrun/anyrun.nix
   ];
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
+  services.swww.enable = true;
   gtk = {
     enable = true;
     theme = {

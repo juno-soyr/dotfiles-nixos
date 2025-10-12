@@ -39,7 +39,6 @@
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "browser.tabs.drawInTitlebar" = true;
           "svg.context-properties.content.enabled" = true;
-          "general.smoothScroll" = true;
           "uc.tweak.hide-tabs-bar" = true;
           "uc.tweak.hide-forward-button" = true;
           "uc.tweak.rounded-corners" = true;

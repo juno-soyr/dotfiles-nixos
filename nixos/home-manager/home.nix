@@ -9,7 +9,6 @@
     ./wayland/modules/waybar/waybar.nix
     ./wayland/modules/fuzzel.nix
     ./modules/firefox/firefox.nix
-    ./modules/stylix.nix
   ];
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";

@@ -7,6 +7,7 @@
     ./wayland/sway/sway.nix
     ./wayland/niri/niri.nix
     ./wayland/modules/waybar/waybar.nix
+    ./wayland/modules/rofi/rofi.nix
   ];
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
@@ -97,7 +98,6 @@
     bitwarden
     discord
     pavucontrol
-    rofi-wayland
     alejandra
   ];
 

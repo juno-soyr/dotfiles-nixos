@@ -19,7 +19,7 @@
       modifier = "Mod4"; # Super key
       terminal = "alacritty";
       keybindings = lib.mkOptionDefault {
-        "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
+        "${modifier}+d" = "exec ${pkgs.anyrun}/bin/anyrun";
       };
 
       gaps = {

@@ -84,6 +84,7 @@
     extraGroups = ["networkmanager" "wheel" "video"];
     packages = with pkgs; [
       #   kdePackages.kate
+      networkmanagerapplet
     ];
   };
   environment.sessionVariables = {

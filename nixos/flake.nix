@@ -50,6 +50,30 @@
           }
         ];
       };
+      tomate = nixpkgs.lib.nixosSystem rec {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ({
+            config,
+            pkgs,
+            ...
+          }: {
+            nixpkgs.overlays = [
+              cursor-theme.overlay
+            ];
+          })
+          ./hosts/lechuga/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.soyr = import ./home-manager/home.nix;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = specialArgs;
+          }
+        ];
+      };
     };
   };
 }

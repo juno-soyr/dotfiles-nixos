@@ -20,6 +20,8 @@
       terminal = "alacritty";
       keybindings = lib.mkOptionDefault {
         "${modifier}+d" = "exec ${pkgs.anyrun}/bin/anyrun";
+        "XF86MonBrightnessDown" = "exec brightnessctl -c backlight set 20-";
+        "XF86MonBrightnessUp" = "exec brightnessctl -c backlight set 20+";
       };
 
       gaps = {

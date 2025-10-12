@@ -103,12 +103,12 @@
     tokyo-night-gtk
     xwayland-satellite
     mako
-    network-manager-applet
   ];
 
   # basic configuration of git, please change to your own
   xdg.configFile."niri/config.kdl".source = ./modules/niri/config.kdl;
   xdg.configFile."niri/b-010.jpg".source = ./modules/niri/b-010.jpg;
+
   programs.git = {
     enable = true;
     userName = "juno-soyr";

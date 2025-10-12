@@ -21,11 +21,10 @@
     self,
     nixpkgs,
     home-manager,
-    firefox-addons,
     ...
   } @ inputs: {
     nixosConfigurations = {
-      lechuga = nixpkgs.lib.nixosSystem {
+      lechuga = nixpkgs.lib.nixosSystem rec {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/lechuga/configuration.nix
@@ -35,6 +34,7 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.soyr = import ./home-manager/home.nix;
+            home-manager.extraSpecialArgs = specialArgs;
           }
         ];
       };

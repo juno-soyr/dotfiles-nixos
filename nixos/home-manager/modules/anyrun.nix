@@ -7,7 +7,7 @@
     enable = true;
 
     config = {
-      layer = "bottom";
+      layer = "overlay";
       y = {fraction = 0.3;};
       height = {absolute = 1;};
       plugins = [
@@ -20,10 +20,10 @@
         background: transparent;
       }
 
-      .main {
+      box.main {
         padding: 5px;
         margin: 10px;
-        border-radius: 10px;
+        border-radius: 50px;
         border: 2px solid black;
         background-color: #1a1b26;
         box-shadow: 0 0 5px black;

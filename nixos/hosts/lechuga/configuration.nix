@@ -132,7 +132,6 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-  xdg.configFile."niri/config.kdl".source = ./../modules/niri/config.kdl;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

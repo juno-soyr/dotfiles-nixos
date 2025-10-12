@@ -101,6 +101,7 @@
     alejandra
     tokyo-night-gtk
     xwayland-satellite
+    mako
   ];
 
   # basic configuration of git, please change to your own

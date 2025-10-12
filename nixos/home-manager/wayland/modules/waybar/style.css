@@ -12,7 +12,7 @@
 /* --- Waybar Container --- */
 #waybar {
   background: transparent;
-  color: #c6d0f5;
+  color: #99d1db;
   margin: 0px;
   font-weight: 500;
 }
@@ -48,7 +48,7 @@
 }
 
 #workspaces button {
-  color: #babbf1;
+  color: #99d1db;
   border-radius: 5px;
   padding: 0.3rem 0.6rem;
   background: transparent;
@@ -71,7 +71,7 @@
 
 #workspaces button:hover {
   background: rgb(41, 42, 53);
-  color: #c6d0f5;
+  color: #99d1db;
 }
 
 /* --- Center Module --- */
@@ -110,7 +110,7 @@
 
 #custom-pomodoro:hover {
   background-color: rgb(41, 42, 53);
-  color: #c6d0f5;
+  color: #99d1db;
   outline: 1px solid rgba(255, 255, 255, 0.1);
   outline-offset: -1px;
 }
@@ -166,26 +166,26 @@
   color: #babbf1;
 }
 #cpu {
-  color: #c6d0f5;
+  color: #99d1db;
 }
 #clock {
   color: #99d1db;
   font-weight: 500;
 }
 #pulseaudio {
-  color: #c6d0f5;
+  color: #99d1db;
 }
 #backlight {
-  color: #c6d0f5;
+  color: #99d1db;
 }
 #network {
-  color: #c6d0f5;
+  color: #99d1db;
 }
 #network.disconnected {
   color: #e78284;
 }
 #custom-lock {
-  color: #babbf1;
+  color: #99d1db;
 }
 #bluetooth {
   color: #888888;

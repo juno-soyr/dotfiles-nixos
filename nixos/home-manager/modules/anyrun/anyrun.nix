@@ -6,11 +6,9 @@
   programs.anyrun = {
     enable = true;
     config = {
-      plugins = with inputs.anyrun.packages.${pkgs.system}; [
-        applications
-        shell
-        symbols
-        translate
+      plugins = [
+        "${pkgs.anyrun}/lib/libapplications.so"
+        "${pkgs.anyrun}/lib/libsymbols.so"
       ];
 
       width.fraction = 0.25;

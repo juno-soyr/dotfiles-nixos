@@ -17,7 +17,7 @@
       modifier = "Mod4"; # Super key
       terminal = "alacritty";
       keybindings = lib.mkOptionDefault {
-        "${modifier}+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun";
+        "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
       };
       window = {
         border = 1;

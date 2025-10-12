@@ -4,8 +4,7 @@
   pkgs,
   ...
 }: {
-  programs.rofi = {
+  programs.fuzzel = {
     enable = true;
-    package = pkgs.rofi-wayland;
   };
 }

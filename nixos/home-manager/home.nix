@@ -7,7 +7,7 @@
     ./wayland/sway/sway.nix
     ./wayland/niri/niri.nix
     ./wayland/modules/waybar/waybar.nix
-    ./wayland/modules/rofi/rofi.nix
+    ./wayland/modules/fuzzel.nix
   ];
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
@@ -167,6 +167,7 @@
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
     };
   };
+  xdg.configFile."rofi/config.rasi".source = ./wayland/modules/rofi/rofi.rasi;
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

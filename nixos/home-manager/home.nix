@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  nur,
   ...
 }: {
   imports = [
@@ -12,7 +11,14 @@
   ];
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
-
+  services.gnome-keyring.enable = true;
+  home.pointerCursor = {
+    name = "Volantes Cursor";
+    package = pkgs.volantes-cursors;
+    size = 20;
+    gtk.enable = true;
+    sway.enable = true;
+  };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     neofetch
@@ -83,6 +89,7 @@
     discord
     pavucontrol
     alejandra
+    volantes-cursors
   ];
 
   # basic configuration of git, please change to your own

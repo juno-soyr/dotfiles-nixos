@@ -12,6 +12,7 @@
       hash = "sha256-oUXpV05POhAypQHibL+kQUHN0MT6ny/+meH60YLfkjM=";
     };
   in {
+    wrapperFeatures.gtk = true;
     enable = true;
     config = rec {
       modifier = "Mod4"; # Super key

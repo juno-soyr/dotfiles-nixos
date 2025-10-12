@@ -24,8 +24,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
-  # Enable networking
+  hardware.graphics.enable32Bit = true; # Enable networking
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -50,10 +49,10 @@
   # You can disable this if you're only using the Wayland session.
 
   # Enable the KDE Plasma Desktop Environment.
-  programs.sway.enable = true;
   programs.niri.enable = true;
+
   # Configure console keymap
-  console.keyMap = "es";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -108,6 +107,7 @@
     wget
     git
   ];
+  environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
     nerd-fonts.symbols-only

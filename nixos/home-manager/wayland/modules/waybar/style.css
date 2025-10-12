@@ -129,6 +129,7 @@
 #backlight,
 #network,
 #memory,
+#battery,
 #custom-lock{
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;
@@ -153,12 +154,6 @@
   margin-left: 0px;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
-}
-
-#battery {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  margin-right: 7px;
 }
 
 /* --- Colors --- */

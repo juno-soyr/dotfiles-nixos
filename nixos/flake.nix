@@ -17,6 +17,7 @@
     self,
     nixpkgs,
     home-manager,
+    nur,
     ...
   } @ inputs: {
     nixosConfigurations = {

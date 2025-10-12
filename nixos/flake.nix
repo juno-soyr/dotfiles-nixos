@@ -34,6 +34,7 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.soyr = import ./home-manager/home.nix;
+            home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = specialArgs;
           }
         ];

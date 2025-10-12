@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
@@ -8,33 +9,97 @@
     profiles = {
       default = {
         id = 0;
-        name = "default";
+        name = "soyr";
         isDefault = true;
+
+        extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+          ublock-origin
+          bitwarden
+          vimium
+          duckduckgo-privacy-essentials
+          sidebery
+          sponsorblock
+          i-dont-care-about-cookies
+          adaptive-tab-bar-colour
+          (youtube-recommended-videos.overrideAttrs (o: {meta = o.meta // {license = lib.licenses.mit;};}))
+          (languagetool.overrideAttrs (o: {meta = o.meta // {license = lib.licenses.mit;};}))
+        ];
+
+        # http://kb.mozillazine.org/Category:Preferences
         settings = {
-          # "browser.startup.homepage" = "https://duckduckgo.com";
-          "browser.search.defaultenginename" = "DuckDuckGo";
-          "browser.search.order.1" = "DuckDuckGo";
-
-          "signon.rememberSignons" = false;
+          "browser.search.defaultenginename" = "duckduckgo";
+          "browser.shell.checkDefaultBrowser" = false;
+          "browser.shell.defaultBrowserCheckCount" = 1;
+          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+          "browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar" = false;
           "widget.use-xdg-desktop-portal.file-picker" = 1;
-          "browser.aboutConfig.showWarning" = false;
-          "browser.compactmode.show" = true;
-          "browser.cache.disk.enable" = false; # Be kind to hard drive
-
-          "mousewheel.default.delta_multiplier_x" = 20;
-          "mousewheel.default.delta_multiplier_y" = 20;
-          "mousewheel.default.delta_multiplier_z" = 20;
-
-          # Firefox 75+ remembers the last workspace it was opened on as part of its session management.
-          # This is annoying, because I can have a blank workspace, click Firefox from the launcher, and
-          # then have Firefox open on some other workspace.
-          "widget.disable-workspace-management" = true;
+          "widget.use-xdg-desktop-portal.mime-handler" = 1;
+          "browser.search.suggest.enabled" = false;
+          "browser.search.suggest.enabled.private" = false;
+          "browser.urlbar.suggest.searches" = false;
+          "browser.urlbar.showSearchSuggestionsFirst" = false;
+          "browser.sessionstore.enabled" = true;
+          "browser.sessionstore.resume_from_crash" = true;
+          "browser.sessionstore.resume_session_once" = true;
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          "browser.tabs.drawInTitlebar" = true;
+          "svg.context-properties.content.enabled" = true;
+          "general.smoothScroll" = true;
+          "uc.tweak.hide-tabs-bar" = true;
+          "uc.tweak.hide-forward-button" = true;
+          "uc.tweak.rounded-corners" = true;
+          "uc.tweak.floating-tabs" = true;
+          "layout.css.color-mix.enabled" = true;
+          "layout.css.light-dark.enabled" = true;
+          "layout.css.has-selector.enabled" = true;
+          "media.ffmpeg.vaapi.enabled" = true;
+          "media.rdd-vpx.enabled" = true;
+          "browser.tabs.tabmanager.enabled" = false;
+          "full-screen-api.ignore-widgets" = false;
+          "browser.urlbar.suggest.engines" = false;
+          "browser.urlbar.suggest.openpage" = false;
+          "browser.urlbar.suggest.bookmark" = false;
+          "browser.urlbar.suggest.addons" = false;
+          "browser.urlbar.suggest.pocket" = false;
+          "browser.urlbar.suggest.topsites" = false;
+          "browser.newtabpage.pinned" = [
+            {
+              title = "youtube";
+              url = "https://www.youtube.com/";
+            }
+            {
+              title = "scientiac";
+              url = "https://scientiac.space/";
+            }
+            {
+              title = "messenger";
+              url = "https://www.messenger.com/";
+            }
+            {
+              title = "search.nixos";
+              url = "https://search.nixos.org/";
+            }
+            {
+              title = "fosstodon";
+              url = "https://fosstodon.org/";
+            }
+            {
+              title = "gitlab";
+              url = "http://www.gitlab.com/";
+            }
+            {
+              title = "github";
+              url = "https://www.github.com/";
+            }
+            {
+              title = "chatgpt";
+              url = "https://chatgpt.com/";
+            }
+          ];
         };
-        search = {
-          force = true;
-          default = "DuckDuckGo";
-          order = ["DuckDuckGo" "Google"];
-        };
+
+        userChrome = builtins.readFile ./simplefox/chrome/userChrome.css;
+        userContent = builtins.readFile ./simple/chrome/userContent.css;
       };
     };
   };

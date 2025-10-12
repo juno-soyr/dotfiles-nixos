@@ -25,7 +25,7 @@
         "sway/workspaces" = {
           disable-scroll = false;
           all-outputs = true;
-          format = "{name}{icon}";
+          format = "{name} {icon}";
           format-icons = {
             active = "";
             default = "";
@@ -45,7 +45,6 @@
           format-disconnected = "󰤠 ";
           interval = 5;
           tooltip-format = "{essid} ({signalStrength}%)";
-          on-click = "nm-connection-editor";
         };
 
         cpu = {
@@ -90,8 +89,8 @@
 
         "custom/lock" = {
           tooltip = false;
-          on-click = "sh -c '(sleep 0s; wlogout)' & disown";
-          format = "";
+          on-click = "${pkgs.wlogout}/bin/wlogout";
+          format = " ";
         };
       };
     };

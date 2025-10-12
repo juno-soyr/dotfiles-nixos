@@ -26,7 +26,7 @@
       };
       window = {
         titlebar = false;
-        border = 5;
+        border = 0;
       };
 
       bars = [

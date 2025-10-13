@@ -17,7 +17,10 @@
   services.swww.enable = true;
   gtk = {
     enable = true;
-
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
     cursorTheme = {
       name = "Volantes Material Dark";
       package = pkgs.volantes-cursors-material;
@@ -100,6 +103,7 @@
     uair
     wlogout
     texlive.combined.scheme-small
+    spotify
   ];
 
   # basic configuration of git, please change to your own

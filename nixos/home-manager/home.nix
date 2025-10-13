@@ -97,7 +97,6 @@
     tokyo-night-gtk
     xwayland-satellite
     anytype
-    mako
     uair
     wlogout
   ];
@@ -161,7 +160,8 @@
       };
     };
   };
-  programs.mako.settings = ''
+  services.mako.enable = true;
+  services.mako.settings = ''
         # Colors
 
     background-color=#1e1e2e

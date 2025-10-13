@@ -99,6 +99,7 @@
     anytype
     uair
     wlogout
+    texlive.combined.scheme-small
   ];
 
   # basic configuration of git, please change to your own

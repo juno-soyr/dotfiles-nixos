@@ -19,12 +19,26 @@
         modules-right = [
           "network"
           "pulseaudio"
+          "bluetooth"
           "battery"
           "memory"
           "backlight"
           "custom/lock"
         ];
 
+        bluetooth = {
+          format = "󰂲";
+          format-on = "{icon}";
+          format-off = "{icon}";
+          format-connected = "{icon}";
+          format-icons = {
+            on = "󰂯";
+            off = "󰂲";
+            connected = "󰂱";
+          };
+          on-click = "blueman-manager";
+          tooltip-format-connected = "{device_enumerate}";
+        };
         "niri/workspaces" = {
           disable-scroll = false;
           all-outputs = true;
@@ -43,18 +57,19 @@
         };
 
         network = {
-          format-wifi = "󰤢";
+          format-wifi = "󰤢 ";
           format-ethernet = "󰈀 ";
           format-disconnected = "󰤠 ";
           interval = 5;
           tooltip-format = "{essid} ({signalStrength}%)";
+          on-click = "nmtui";
         };
 
         cpu = {
           interval = 1;
           format = "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%";
           format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-          on-click = "ghostty -e htop";
+          on-click = "alacritty -e htop";
         };
 
         memory = {

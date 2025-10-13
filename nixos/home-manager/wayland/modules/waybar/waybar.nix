@@ -62,14 +62,14 @@
           format-disconnected = "󰤠 ";
           interval = 5;
           tooltip-format = "{essid} ({signalStrength}%)";
-          on-click = "nmtui";
+          on-click = "nm-connection-editor";
         };
 
         cpu = {
           interval = 1;
           format = "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%";
           format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-          on-click = "alacritty -e htop";
+          on-click = "alacritty -e btop";
         };
 
         memory = {

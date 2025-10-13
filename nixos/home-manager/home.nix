@@ -14,6 +14,7 @@
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
+  services.blueman.enable = true;
   services.swww.enable = true;
   gtk = {
     enable = true;
@@ -103,7 +104,6 @@
     tokyo-night-gtk
     xwayland-satellite
     mako
-    networkmanagerapplet
   ];
 
   # basic configuration of git, please change to your own

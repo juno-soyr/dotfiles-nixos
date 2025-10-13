@@ -98,11 +98,14 @@
     xwayland-satellite
     anytype
     mako
+    uair
+    wlogout
   ];
 
   # basic configuration of git, please change to your own
   xdg.configFile."niri/config.kdl".source = ./modules/niri/config.kdl;
   xdg.configFile."niri/b-010.jpg".source = ./modules/niri/b-010.jpg;
+  xdg.configFile."uair/uair.toml".source = ./wayland/modules/waybar/uair.toml;
   xdg.portal = {
     enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];

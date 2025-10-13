@@ -14,7 +14,7 @@
         margin-bottom = -10;
         spacing = 0;
 
-        modules-left = ["niri/workspaces" "cpu"];
+        modules-left = ["niri/workspaces" "cpu" "custom/timer"];
         modules-center = ["clock"];
         modules-right = [
           "network"
@@ -51,7 +51,7 @@
 
         clock = {
           timezone = "Europe/Warsaw";
-          tooltip = false;
+          tooltip = "calendar";
           format = "{:%H:%M:%S  -  %A, %d}";
           interval = 1;
         };
@@ -109,6 +109,10 @@
           tooltip = false;
           on-click = "${pkgs.wlogout}/bin/wlogout";
           format = " ";
+        };
+        "custom/timer" = {
+          exec = "uair";
+          onclick = "uairctl toggle";
         };
       };
     };

@@ -115,8 +115,7 @@
   outline-offset: -1px;
 }
 
-#custom-pomodoro.work,
-#custom-pomodoro.break {
+#custom-timer{
   color: #99d1db;
   background-color: rgba(153, 209, 219, 0.1);
   box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2);
@@ -131,6 +130,7 @@
 #memory,
 #tray,
 #battery,
+
 #custom-lock{
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;

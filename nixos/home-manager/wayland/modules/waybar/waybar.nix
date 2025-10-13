@@ -36,7 +36,7 @@
             off = "󰂲";
             connected = "󰂱";
           };
-          on-click = "bluetui";
+          on-click = "alacritty -e bluetui";
           tooltip-format-connected = "{device_enumerate}";
         };
         "niri/workspaces" = {

@@ -96,6 +96,7 @@
     alejandra
     tokyo-night-gtk
     xwayland-satellite
+    anytype
     mako
   ];
 

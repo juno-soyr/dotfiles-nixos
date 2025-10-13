@@ -14,7 +14,7 @@
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
-  services.blueman.enable = true;
+
   services.swww.enable = true;
   gtk = {
     enable = true;

@@ -50,6 +50,8 @@
 
   # Enable the KDE Plasma Desktop Environment.
   programs.niri.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  programs.sway.enable = true;
 
   # Configure console keymap
   console.keyMap = "us";
@@ -107,7 +109,6 @@
     wget
     git
   ];
-  environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
     nerd-fonts.symbols-only

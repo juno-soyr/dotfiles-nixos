@@ -57,8 +57,9 @@
   # You can disable this if you're only using the Wayland session.
 
   # Enable the KDE Plasma Desktop Environment.
-  programs.sway.enable = true;
   programs.niri.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  programs.sway.enable = true;
   # Configure console keymap
   console.keyMap = "es";
 

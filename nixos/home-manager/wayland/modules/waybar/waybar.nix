@@ -36,7 +36,7 @@
             off = "󰂲";
             connected = "󰂱";
           };
-          on-click = "blueman-manager";
+          on-click = "bluetui";
           tooltip-format-connected = "{device_enumerate}";
         };
         "niri/workspaces" = {

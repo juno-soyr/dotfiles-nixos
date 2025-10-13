@@ -14,23 +14,15 @@
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
-
   services.swww.enable = true;
   gtk = {
     enable = true;
-    theme = {
-      name = "Tokyonight-Dark-B";
-      package = pkgs.tokyo-night-gtk;
-    };
-    iconTheme = {
-      name = "Tokyonight-Dark";
-    };
+
     cursorTheme = {
       name = "Volantes Material Dark";
       package = pkgs.volantes-cursors-material;
     };
   };
-  home.sessionVariables.GTK_THEME = "Tokyonight-Dark-B";
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     neofetch
@@ -58,6 +50,7 @@
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
     ipcalc # it is a calculator for the IPv4/v6 addresses
+    bluetui
 
     # misc
     cowsay

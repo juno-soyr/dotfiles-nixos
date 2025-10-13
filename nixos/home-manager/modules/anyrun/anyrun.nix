@@ -10,7 +10,6 @@
         "${pkgs.anyrun}/lib/libapplications.so"
         "${pkgs.anyrun}/lib/libsymbols.so"
         "${pkgs.anyrun}/lib/libtranslate.so"
-        "${pkgs.anyrun}/lib/libniri_focus.so"
         "${pkgs.anyrun}/libdictionary.so"
       ];
 

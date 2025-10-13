@@ -23,7 +23,6 @@
           "battery"
           "memory"
           "backlight"
-          "tray"
           "custom/lock"
         ];
 

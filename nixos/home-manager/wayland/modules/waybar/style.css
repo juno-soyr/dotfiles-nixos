@@ -91,7 +91,7 @@
 }
 
 /* Pomodoro Module */
-#custom-pomodoro {
+#custom-timer {
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
@@ -108,19 +108,13 @@
   margin-right: 5px;
 }
 
-#custom-pomodoro:hover {
+#custom-timer:hover {
   background-color: rgb(41, 42, 53);
   color: #99d1db;
   outline: 1px solid rgba(255, 255, 255, 0.1);
   outline-offset: -1px;
 }
 
-#custom-timer{
-  color: #99d1db;
-  background-color: rgba(153, 209, 219, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2);
-  outline: none;
-}
 
 /* --- Right Modules --- */
 #bluetooth,

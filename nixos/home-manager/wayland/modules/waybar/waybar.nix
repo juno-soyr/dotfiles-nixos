@@ -51,7 +51,7 @@
 
         clock = {
           timezone = "Europe/Warsaw";
-          tooltip = "calendar";
+          tooltip = false;
           format = "{:%H:%M:%S  -  %A, %d}";
           interval = 1;
         };
@@ -111,8 +111,11 @@
           format = " ";
         };
         "custom/timer" = {
-          exec = "uair";
-          onclick = "uairctl toggle";
+          exec = "uairctl fetch '{name} {time} {percent}%'";
+          interval = 5;
+          on-click = "uairctl toggle";
+          on-click-middle = "uairctl prev";
+          on-click-right = "uairctl next";
         };
       };
     };

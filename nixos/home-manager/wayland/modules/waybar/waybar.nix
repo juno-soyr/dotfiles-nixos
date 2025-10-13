@@ -14,7 +14,7 @@
         margin-bottom = -10;
         spacing = 0;
 
-        modules-left = ["niri/workspaces" "cpu"];
+        modules-left = ["sway/workspaces" "cpu"];
         modules-center = ["clock"];
         modules-right = [
           "network"

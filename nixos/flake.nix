@@ -45,7 +45,7 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.soyr = import ./home-manager/home.nix;
-            home-manager.backupFileExtension = "backup";
+            home-manager.backupFileExtension = "backup2";
             home-manager.extraSpecialArgs = specialArgs;
           }
         ];
@@ -69,7 +69,7 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.soyr = import ./home-manager/home.nix;
-            home-manager.backupFileExtension = "backup";
+            home-manager.backupFileExtension = "backup2";
             home-manager.extraSpecialArgs = specialArgs;
           }
         ];

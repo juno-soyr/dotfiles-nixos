@@ -158,7 +158,17 @@
       };
     };
   };
+  programs.mako.settings = ''
+        # Colors
 
+    background-color=#1e1e2e
+    text-color=#cdd6f4
+    border-color=#b4befe
+    progress-color=over #313244
+
+    [urgency=high]
+    border-color=#fab387
+  '';
   programs.bash = {
     enable = true;
     enableCompletion = true;

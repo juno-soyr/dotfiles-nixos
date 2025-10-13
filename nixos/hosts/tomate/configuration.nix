@@ -9,7 +9,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./../login-manager.nix
     ./../modules
   ];
 
@@ -48,9 +47,9 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
 
-  # Enable the KDE Plasma Desktop Environment.
   programs.niri.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+ services.xserver.displayManager.gdm.enable = true; 
+services.xserver.desktopManager.gnome.enable = true;
   programs.sway.enable = true;
 
   # Configure console keymap

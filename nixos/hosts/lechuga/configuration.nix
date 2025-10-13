@@ -58,6 +58,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   programs.niri.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   programs.sway.enable = true;
   # Configure console keymap

@@ -10,7 +10,7 @@
         "${pkgs.anyrun}/lib/libapplications.so"
         "${pkgs.anyrun}/lib/libsymbols.so"
         "${pkgs.anyrun}/lib/libtranslate.so"
-        "${pkgs.anyrun}/libdictionary.so"
+        "${pkgs.anyrun}/lib/libdictionary.so"
       ];
 
       width.fraction = 0.25;

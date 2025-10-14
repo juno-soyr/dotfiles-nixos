@@ -21,14 +21,8 @@
 
     # Required, nvf works best and only directly supports flakes
     nvf = {
-      url = "github:NotAShelf/nvf";
-      # You can override the input nixpkgs to follow your system's
-      # instance of nixpkgs. This is safe to do as nvf does not depend
-      # on a binary cache.
-      inputs.nixpkgs.follows = "nixpkgs";
-      # Optionally, you can also override individual plugins
-      # for example:
-    }; 
+      url = "github:NotAShelf/nvf/";
+    };
   };
 
   outputs = {
@@ -36,7 +30,7 @@
     nixpkgs,
     home-manager,
     cursor-theme,
-	nvf,
+    nvf,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -52,8 +46,8 @@
               cursor-theme.overlay
             ];
           })
-	 nvf.homeManagerModules.default
           ./hosts/lechuga/configuration.nix
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -61,6 +55,7 @@
 
             home-manager.users.soyr = import ./home-manager/home.nix;
             home-manager.backupFileExtension = "backup-lechuga";
+
             home-manager.extraSpecialArgs = specialArgs;
           }
         ];
@@ -77,7 +72,6 @@
               cursor-theme.overlay
             ];
           })
-nvf.homeManagerModules.default
           ./hosts/tomate/configuration.nix
           home-manager.nixosModules.home-manager
           {

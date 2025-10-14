@@ -48,7 +48,9 @@
             default = "";
           };
         };
-
+        "niri/window" = {
+          default-title = "niri";
+        };
         clock = {
           timezone = "Europe/Warsaw";
           tooltip = false;

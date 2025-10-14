@@ -164,20 +164,20 @@ border-radius:  6px;
   color: #babbf1;
 }
 #cpu {
-  color: #99d1db;
+  color: #babbf1;
 }
 #clock {
-  color: #99d1db;
+  color: #babbf1;
   font-weight: 500;
 }
 #pulseaudio {
-  color: #99d1db;
+  color: #babbf1;
 }
 #backlight {
-  color: #99d1db;
+  color: #babbf1;
 }
 #network {
-  color: #99d1db;
+  color: #babbf1;
 }
 #network.disconnected {
   color: #e78284;
@@ -193,10 +193,10 @@ border-radius:  6px;
   color: #2196f3;
 }
 #bluetooth.connected {
-  color: #99d1db;
+  color: #babbf1;
 }
 #battery {
-  color: #99d1db;
+  color: #babbf1;
 }
 #battery.charging {
   color: #a6d189;
@@ -208,7 +208,7 @@ border-radius:  6px;
 /* --- Tooltip Styles --- */
 tooltip {
   background-color: #1a1b26;
-  color: #dddddd;
+  color: #babbf1;
   padding: 5px 12px;
   margin: 5px 0px;
   border-radius: 6px;

@@ -11,6 +11,7 @@
     ./modules/firefox/firefox.nix
     ./modules/anyrun/anyrun.nix
   ];
+
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
@@ -29,7 +30,7 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     neofetch
-    nnn # terminal file manager
+    yazi # terminal file manager
 
     # archives
     zip
@@ -146,6 +147,14 @@
       aws.disabled = true;
       gcloud.disabled = true;
       line_break.disabled = true;
+    };
+  };
+
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      theme = "catppuccin-mocha";
+      background-opacity = 0.9;
     };
   };
 

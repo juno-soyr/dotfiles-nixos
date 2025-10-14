@@ -14,7 +14,7 @@
         margin-bottom = -10;
         spacing = 0;
 
-        modules-left = ["niri/workspaces" "cpu" "custom/timer"];
+        modules-left = ["niri/workspaces" "niri/window" "cpu" "custom/timer"];
         modules-center = ["clock"];
         modules-right = [
           "network"

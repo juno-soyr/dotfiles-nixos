@@ -117,6 +117,11 @@
 
 
 /* --- Right Modules --- */
+.modules-right {
+background-color: #282a36;
+margin-left: 0px;
+padding: 0px 5px 0px 0px;
+}
 #bluetooth,
 #pulseaudio,
 #backlight,
@@ -124,7 +129,7 @@
 #memory,
 #tray,
 #battery,
-
+#window,
 #custom-lock{
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;

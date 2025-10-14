@@ -12,11 +12,18 @@
 /* --- Waybar Container --- */
 #waybar {
   background: transparent;
-  color: #99d1db;
+  color: #babbf1;
   margin: 0px;
   font-weight: 500;
 }
-
+/* --- Modules Container --- */
+.modules-left,
+.modules-right {
+background-color: #282a36;
+margin: 5px 5px;
+padding: 0px 5px 0px 0px;
+border-radius:  6px;
+}
 /* --- Left Modules --- */
 #workspaces,
 #custom-uptime,
@@ -117,11 +124,7 @@
 
 
 /* --- Right Modules --- */
-.modules-right {
-background-color: #282a36;
-margin-left: 0px;
-padding: 0px 5px 0px 0px;
-}
+
 #bluetooth,
 #pulseaudio,
 #backlight,

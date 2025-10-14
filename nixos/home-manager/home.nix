@@ -206,6 +206,9 @@
       lualine.enable = true;
       bufferline.enable = true;
       web-devicons.enable = true;
+      neo-tree = {
+        enable = true;
+      };
       lsp = {
         enable = true;
         servers = {

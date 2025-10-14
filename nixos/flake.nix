@@ -52,6 +52,7 @@
               cursor-theme.overlay
             ];
           })
+	 nvf.homeManagerModules.default
           ./hosts/lechuga/configuration.nix
           home-manager.nixosModules.home-manager
           {
@@ -76,6 +77,7 @@
               cursor-theme.overlay
             ];
           })
+nvf.homeManagerModules.default
           ./hosts/tomate/configuration.nix
           home-manager.nixosModules.home-manager
           {

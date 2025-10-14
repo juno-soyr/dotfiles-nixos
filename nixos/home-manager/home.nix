@@ -15,7 +15,6 @@
   ];
 
   home.username = "soyr";
-  home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
   services.swww.enable = true;

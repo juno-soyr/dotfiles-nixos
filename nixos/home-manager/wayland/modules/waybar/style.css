@@ -27,6 +27,7 @@ border-radius:  6px;
 /* --- Left Modules --- */
 #workspaces,
 #custom-uptime,
+#window
 #cpu {
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;
@@ -36,6 +37,10 @@ border-radius:  6px;
   min-width: 0;
   border: none;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#window {
+   margin-right: 5px;
 }
 
 #workspaces {
@@ -132,7 +137,6 @@ border-radius:  6px;
 #memory,
 #tray,
 #battery,
-#window,
 #custom-lock{
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;

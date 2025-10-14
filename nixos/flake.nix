@@ -20,9 +20,7 @@
     # you must also add it as a flake input.
 
     # Required, nvf works best and only directly supports flakes
-    nvf = {
-      url = "github:NotAShelf/nvf/";
-    };
+    nixvim.url = "github:nix-community/nixvim-25.05";
   };
 
   outputs = {
@@ -30,7 +28,7 @@
     nixpkgs,
     home-manager,
     cursor-theme,
-    nvf,
+    nixvim,
     ...
   } @ inputs: {
     nixosConfigurations = {

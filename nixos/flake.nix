@@ -20,7 +20,7 @@
     # you must also add it as a flake input.
 
     # Required, nvf works best and only directly supports flakes
-    nixvim.url = "github:nix-community/nixvim-25.05";
+    nixvim.url = "github:nix-community/nixvim/nixos-25.05";
   };
 
   outputs = {

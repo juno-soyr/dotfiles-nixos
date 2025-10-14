@@ -107,7 +107,6 @@ home.username = "soyr";
     wlogout
     texlive.combined.scheme-small
     spotify
-    rnix-lsp
   ];
 
   # basic configuration of git, please change to your own
@@ -198,26 +197,17 @@ home.username = "soyr";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
     };
   };
-  programs.nixvim = {
+  programs.nvf = {
     enable = true;
     defaultEditor = true;
-    colorschemes.catppuccin.enable = true;
-    plugins = {
-    lualine.enable = true; 
-    bufferline.enable = true;
-    web-devicons.enable = true;
-    devicos
-      lsp = {
-        enable = true;
-	servers = {
-		metals.enable = true;
-		rnix.enable = true;
-	};
-      };
-      lsp-format = {
+    # your settings need to go into the settings attribute set
+    # most settings are documented in the appendix
+    settings = {
+      vim.viAlias = false;
+      vim.vimAlias = true;
+      vim.lsp = {
         enable = true;
       };
-        neogit.enable = true;
     };
   };
   home.file.".icons/default".source = "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";

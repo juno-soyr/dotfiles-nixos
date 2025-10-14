@@ -11,9 +11,10 @@
     ./wayland/modules/fuzzel.nix
     ./modules/firefox/firefox.nix
     ./modules/anyrun/anyrun.nix
-    inputs.nixvim.homeModules.nixvim
+    inputs.nvf.homeManagerModules.default
   ];
 
+  home.username = "soyr";
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
@@ -106,6 +107,7 @@
     uair
     wlogout
     texlive.combined.scheme-small
+    libnotify
     spotify
   ];
 

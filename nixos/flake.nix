@@ -16,9 +16,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     cursor-theme.url = "github:mrcjkb/volantes-cursors-material";
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+    # Optional, if you intend to follow nvf's obsidian-nvim input
+    # you must also add it as a flake input.
+
+    # Required, nvf works best and only directly supports flakes
+    nvf = {
+      url = "github:NotAShelf/nvf/";
     };
   };
 
@@ -27,7 +30,7 @@
     nixpkgs,
     home-manager,
     cursor-theme,
-    nixvim,
+    nvf,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -44,6 +47,7 @@
             ];
           })
           ./hosts/lechuga/configuration.nix
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -51,6 +55,7 @@
 
             home-manager.users.soyr = import ./home-manager/home.nix;
             home-manager.backupFileExtension = "backup-lechuga";
+
             home-manager.extraSpecialArgs = specialArgs;
           }
         ];

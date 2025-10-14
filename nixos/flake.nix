@@ -16,6 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     cursor-theme.url = "github:mrcjkb/volantes-cursors-material";
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -23,6 +27,7 @@
     nixpkgs,
     home-manager,
     cursor-theme,
+    nixvim,
     ...
   } @ inputs: {
     nixosConfigurations = {

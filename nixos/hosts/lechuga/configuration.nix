@@ -115,6 +115,7 @@
     wget
     git
   ];
+  environment.variables.EDITOR = "nvim";
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
     nerd-fonts.symbols-only

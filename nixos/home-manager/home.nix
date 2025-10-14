@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
@@ -10,6 +11,7 @@
     ./wayland/modules/fuzzel.nix
     ./modules/firefox/firefox.nix
     ./modules/anyrun/anyrun.nix
+    inputs.nixvim.homeModules.nixvim
   ];
 
   home.username = "soyr";
@@ -122,11 +124,6 @@
     userName = "juno-soyr";
     userEmail = "h.gaspar@proton.me";
   };
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -198,6 +195,23 @@
       k = "kubectl";
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+    };
+  };
+  programs.nixvim = {
+    enable = true;
+    defaultEditor = true;
+    plugins = {
+      lsp = {
+        enable = true;
+      };
+      lsp-format = {
+        enable = true;
+      };
+      treesitter = {
+        enable = true;
+        settings.indent = true;
+      };
+      neogit.enable = true;
     };
   };
   home.file.".icons/default".source = "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";

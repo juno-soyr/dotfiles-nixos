@@ -11,7 +11,6 @@
     ./wayland/modules/fuzzel.nix
     ./modules/firefox/firefox.nix
     ./modules/anyrun/anyrun.nix
-    inputs.nixvim.homeModules.nixvim
   ];
 
 home.username = "soyr";

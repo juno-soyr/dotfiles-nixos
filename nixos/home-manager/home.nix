@@ -14,7 +14,7 @@
     inputs.nixvim.homeModules.nixvim
   ];
 
-home.username = "soyr";
+  home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
   services.swww.enable = true;
@@ -107,7 +107,6 @@ home.username = "soyr";
     wlogout
     texlive.combined.scheme-small
     spotify
-    rnix-lsp
   ];
 
   # basic configuration of git, please change to your own
@@ -203,21 +202,19 @@ home.username = "soyr";
     defaultEditor = true;
     colorschemes.catppuccin.enable = true;
     plugins = {
-    lualine.enable = true; 
-    bufferline.enable = true;
-    web-devicons.enable = true;
-    devicos
+      lualine.enable = true;
+      bufferline.enable = true;
+      web-devicons.enable = true;
       lsp = {
         enable = true;
-	servers = {
-		metals.enable = true;
-		rnix.enable = true;
-	};
+        servers = {
+          metals.enable = true;
+        };
       };
       lsp-format = {
         enable = true;
       };
-        neogit.enable = true;
+      neogit.enable = true;
     };
   };
   home.file.".icons/default".source = "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";

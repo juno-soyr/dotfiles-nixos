@@ -11,6 +11,7 @@
     ./wayland/modules/fuzzel.nix
     ./modules/firefox/firefox.nix
     ./modules/anyrun/anyrun.nix
+    ./modules/chromium-proton/proton.nix
     inputs.nixvim.homeModules.nixvim
   ];
 

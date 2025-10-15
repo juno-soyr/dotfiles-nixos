@@ -155,23 +155,6 @@
       background-opacity = 0.9;
     };
   };
-
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
-  programs.alacritty = {
-    enable = true;
-    # custom settings
-    settings = {
-      env.TERM = "xterm-256color";
-      font = {
-        size = 12;
-      };
-      scrolling.multiplier = 5;
-      selection.save_to_clipboard = true;
-      window = {
-        opacity = 0.9;
-      };
-    };
-  };
   services.mako.enable = true;
   services.mako.settings = {
     background-color = "#1e1e2e";

@@ -5,7 +5,6 @@
   ...
 }: {
   programs.firefox = {
-    package = pkgs.librewolf;
     enable = true;
     profiles = {
       default = {

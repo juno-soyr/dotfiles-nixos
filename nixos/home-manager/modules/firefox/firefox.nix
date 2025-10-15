@@ -57,6 +57,7 @@
         };
 
         userChrome = builtins.readFile ./chrome/userChrome.css;
+	userContent = builtins.readFile ./chrome/userContent.css;
       };
     };
   };

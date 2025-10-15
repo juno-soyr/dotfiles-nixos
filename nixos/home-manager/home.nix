@@ -108,7 +108,8 @@
     texlive.combined.scheme-small
     libnotify
     spotify
-  ];
+	thunderbird
+];
 
   # basic configuration of git, please change to your own
   xdg.configFile."niri/config.kdl".source = ./modules/niri/config.kdl;
@@ -189,8 +190,10 @@
       lualine.enable = true;
       bufferline.enable = true;
       web-devicons.enable = true;
+      treesitter.enable = true;
       neo-tree = {
         enable = true;
+
       };
       lsp = {
         enable = true;
@@ -198,8 +201,14 @@
           metals.enable = true;
         };
       };
+      
       lsp-format = {
         enable = true;
+	autoLoad = true;
+      };
+      cmp = {
+	enable = true;
+	autoEnableSources = true;
       };
       neogit.enable = true;
     };

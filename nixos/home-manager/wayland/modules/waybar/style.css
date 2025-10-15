@@ -27,7 +27,8 @@ border-radius:  6px;
 /* --- Left Modules --- */
 #workspaces,
 #custom-uptime,
-#window
+#custom-timer,
+#window,
 #cpu {
   background-color: #1a1b26;
   padding: 0.3rem 0.7rem;

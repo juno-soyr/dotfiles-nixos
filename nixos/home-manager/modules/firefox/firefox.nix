@@ -5,6 +5,7 @@
   ...
 }: {
   programs.firefox = {
+    package = pkgs.librewolf;
     enable = true;
     profiles = {
       default = {
@@ -57,6 +58,7 @@
         };
 
         userChrome = builtins.readFile ./chrome/userChrome.css;
+	userContent = builtins.readFile ./chrome/userContent.css;
       };
     };
   };

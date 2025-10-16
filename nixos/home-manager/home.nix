@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./wayland/sway/sway.nix
     ./wayland/modules/waybar/waybar.nix
@@ -107,6 +108,7 @@
     spotify
     thunderbird
     nixfmt-rfc-style
+    protonmail-desktop
   ];
 
   # basic configuration of git, please change to your own
@@ -115,7 +117,7 @@
   xdg.configFile."uair/uair.toml".source = ./wayland/modules/waybar/uair.toml;
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     xdgOpenUsePortal = true;
   };
   xdg.portal.config.common.default = "*";
@@ -171,7 +173,7 @@
       };
     };
   };
-  
+
   services.mako.enable = true;
   services.mako.settings = {
     background-color = "#1e1e2e";
@@ -237,18 +239,19 @@
         settings = {
           default_format_opts.lsp_format = "fallback";
           formatters_by_ft = {
-            "nix" = ["alejandra"];
+            "nix" = [ "alejandra" ];
             "typst" = [
               "typstyle"
               "injected"
             ];
-            "sh" = ["shfmt"];
+            "sh" = [ "shfmt" ];
           };
         };
       };
     };
   };
-  home.file.".icons/default".source = "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
+  home.file.".icons/default".source =
+    "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

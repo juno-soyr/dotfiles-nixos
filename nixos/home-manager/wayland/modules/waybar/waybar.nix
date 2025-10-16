@@ -1,9 +1,8 @@
 {
-  config,
-  lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.waybar = {
     enable = true;
 
@@ -14,8 +13,13 @@
         margin-bottom = -10;
         spacing = 0;
 
-        modules-left = ["niri/workspaces" "niri/window" "cpu" "custom/timer"];
-        modules-center = ["clock"];
+        modules-left = [
+          "niri/workspaces"
+          "niri/window"
+          "cpu"
+          "custom/timer"
+        ];
+        modules-center = [ "clock" ];
         modules-right = [
           "network"
           "pulseaudio"
@@ -36,7 +40,7 @@
             off = "󰂲";
             connected = "󰂱";
           };
-          on-click = "alacritty -e bluetui";
+          on-click = "ghostty -e bluetui";
           tooltip-format-connected = "{device_enumerate}";
         };
         "niri/workspaces" = {
@@ -70,8 +74,17 @@
         cpu = {
           interval = 1;
           format = "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%";
-          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-          on-click = "alacritty -e btop";
+          format-icons = [
+            "▁"
+            "▂"
+            "▃"
+            "▄"
+            "▅"
+            "▆"
+            "▇"
+            "█"
+          ];
+          on-click = "ghostty -e btop";
         };
 
         memory = {
@@ -82,14 +95,26 @@
 
         backlight = {
           format = "{icon}  {percent}%";
-          format-icons = ["" "󰃜" "󰃛" "󰃞" "󰃝" "󰃟" "󰃠"];
+          format-icons = [
+            ""
+            "󰃜"
+            "󰃛"
+            "󰃞"
+            "󰃝"
+            "󰃟"
+            "󰃠"
+          ];
           tooltip = false;
         };
 
         pulseaudio = {
           format = "{icon}  {volume}%";
           format-muted = "";
-          format-icons.default = ["" "" " "];
+          format-icons.default = [
+            ""
+            ""
+            " "
+          ];
           on-click = "pavucontrol";
         };
 
@@ -104,7 +129,13 @@
           format-charging = " {capacity}%";
           format-plugged = " {capacity}%";
           format-alt = "{icon}   {time}";
-          format-icons = ["" "" "" "" ""];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
 
         "custom/lock" = {

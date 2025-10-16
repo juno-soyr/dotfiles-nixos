@@ -10,7 +10,7 @@
       main = {
         width = 25;
         line-height = 50;
-        terminal = "alacritty";
+        terminal = "ghostty";
         prompt = "❯   ";
         show-actions = "yes";
         anchor = "left";

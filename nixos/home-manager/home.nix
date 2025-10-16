@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  lib,
   inputs,
   ...
 }: {
@@ -13,7 +11,6 @@
     ./modules/anyrun/anyrun.nix
     inputs.nixvim.homeModules.nixvim
   ];
-
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
@@ -105,11 +102,12 @@
     anytype
     uair
     wlogout
-    texlive.combined.scheme-small
+    texlive.combined.scheme-full
     libnotify
     spotify
-	thunderbird
-];
+    thunderbird
+    nixfmt-rfc-style
+  ];
 
   # basic configuration of git, please change to your own
   xdg.configFile."niri/config.kdl".source = ./modules/niri/config.kdl;
@@ -157,7 +155,7 @@
     };
   };
 
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
+  # Alacritty - a cross-platform, GPU-accelerated terminal emulator
   programs.alacritty = {
     enable = true;
     # custom settings
@@ -173,6 +171,7 @@
       };
     };
   };
+  
   services.mako.enable = true;
   services.mako.settings = {
     background-color = "#1e1e2e";
@@ -203,31 +202,50 @@
     enable = true;
     defaultEditor = true;
     colorschemes.catppuccin.enable = true;
+
     plugins = {
       lualine.enable = true;
       bufferline.enable = true;
       web-devicons.enable = true;
       treesitter.enable = true;
+
       neo-tree = {
         enable = true;
-
       };
       lsp = {
         enable = true;
         servers = {
           metals.enable = true;
+          nixd.enable = true;
         };
       };
-      
+
       lsp-format = {
         enable = true;
-	autoLoad = true;
+        autoLoad = true;
       };
       cmp = {
-	enable = true;
-	autoEnableSources = true;
+        enable = true;
+        autoEnableSources = true;
       };
       neogit.enable = true;
+
+      coq-nvim.enable = true;
+
+      conform-nvim = {
+        enable = true;
+        settings = {
+          default_format_opts.lsp_format = "fallback";
+          formatters_by_ft = {
+            "nix" = ["alejandra"];
+            "typst" = [
+              "typstyle"
+              "injected"
+            ];
+            "sh" = ["shfmt"];
+          };
+        };
+      };
     };
   };
   home.file.".icons/default".source = "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";

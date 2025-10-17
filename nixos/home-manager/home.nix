@@ -252,25 +252,25 @@
                 { "i", "s" }
               )
             '';
-            window = {
-              completion = {
-                border = "rounded";
-                winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
-                zindex = 1001;
-                scrolloff = 0;
-                colOffset = 0;
-                sidePadding = 1;
-                scrollbar = true;
-              };
-              documentation = {
-                border = "rounded";
-                winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
-                zindex = 1001;
-                maxHeight = 20;
-              };
-            };
-
           };
+          window = {
+            completion = {
+              border = "rounded";
+              winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+              zindex = 1001;
+              scrolloff = 0;
+              colOffset = 0;
+              sidePadding = 1;
+              scrollbar = true;
+            };
+            documentation = {
+              border = "rounded";
+              winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+              zindex = 1001;
+              maxHeight = 20;
+            };
+          };
+
         };
 
       };

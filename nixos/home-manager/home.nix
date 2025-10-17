@@ -214,7 +214,7 @@
       web-devicons.enable = true;
       treesitter.enable = true;
 
-      neo-tree = {
+      nvim-tree = {
         enable = true;
       };
       lsp = {
@@ -232,7 +232,52 @@
       cmp = {
         enable = true;
         autoEnableSources = true;
+        settings = {
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "path"; }
+            { name = "buffer"; }
+          ];
+          mapping = {
+            "<Tab>" = ''
+              cmp.mapping(
+                function(fallback)
+                  local col = vim.fn.col('.') - 1
+
+                  if cmp.visible() then
+                    cmp.select_next_item(select_opts)
+                  elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+                    fallback()
+                  else
+                    cmp.complete()
+                  end
+                end,
+                { "i", "s" }
+              )
+            '';
+          };
+          window = {
+            completion = {
+              border = "rounded";
+              winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+              zindex = 1001;
+              scrolloff = 0;
+              colOffset = 0;
+              sidePadding = 1;
+              scrollbar = true;
+            };
+            documentation = {
+              border = "rounded";
+              winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+              zindex = 1001;
+              maxHeight = 20;
+            };
+          };
+
+        };
+
       };
+      telescope.enable = true;
       neogit.enable = true;
 
       coq-nvim.enable = true;

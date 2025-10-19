@@ -6,8 +6,8 @@
 {
   imports = [
     ./wayland/sway/sway.nix
-    ./wayland/modules/waybar/waybar.nix
-    ./wayland/modules/fuzzel.nix
+    ./wayland/waybar/waybar.nix
+    ./wayland/fuzzel.nix
     ./modules/firefox/firefox.nix
     ./modules/anyrun/anyrun.nix
     inputs.nixvim.homeModules.nixvim
@@ -117,9 +117,9 @@
   ];
 
   # basic configuration of git, please change to your own
-  xdg.configFile."niri/config.kdl".source = ./modules/niri/config.kdl;
-  xdg.configFile."niri/b-010.jpg".source = ./modules/niri/b-010.jpg;
-  xdg.configFile."uair/uair.toml".source = ./wayland/modules/waybar/uair.toml;
+  xdg.configFile."niri/config.kdl".source = ./wayland/niri/config.kdl;
+  xdg.configFile."niri/b-010.jpg".source = ./wayland/niri/b-010.jpg;
+  xdg.configFile."uair/uair.toml".source = ./wayland/waybar/uair.toml;
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

@@ -6,8 +6,7 @@
 {
   imports = [
     ./wayland
-    ./modules/firefox/firefox.nix
-    ./modules/anyrun/anyrun.nix
+    ./modules
     inputs.nixvim.homeModules.nixvim
   ];
   home.username = "soyr";

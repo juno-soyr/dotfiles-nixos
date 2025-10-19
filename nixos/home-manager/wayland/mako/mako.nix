@@ -1,0 +1,16 @@
+{ ... }:
+{
+  services.mako = {
+    enable = true;
+    settings = {
+      background-color = "#1e1e2e";
+      text-color = "#cdd6f4";
+      border-color = "#b4befe";
+      progress-color = "over #313244";
+
+      "urgency=high" = {
+        border-color = "#fab387";
+      };
+    };
+  };
+}

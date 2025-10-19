@@ -113,48 +113,12 @@
     python3Packages.aiohttp
   ];
 
-  # basic configuration of git, please change to your own
+  # basic configuration of git
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    xdgOpenUsePortal = true;
-  };
-  xdg.portal.config.common.default = "*";
   programs.git = {
     enable = true;
     userName = "juno-soyr";
     userEmail = "h.gaspar@proton.me";
-  };
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
-      yzhang.markdown-all-in-one
-      ms-python.python
-      jnoortheen.nix-ide
-      kamadorueda.alejandra
-    ];
-  };
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
-  };
-
-  programs.ghostty = {
-    enable = true;
-    settings = {
-      theme = "catppuccin-mocha";
-      background-opacity = 0.9;
-    };
   };
 
   # Alacritty - a cross-platform, GPU-accelerated terminal emulator
@@ -174,21 +138,9 @@
     };
   };
 
-  services.mako.enable = true;
-  services.mako.settings = {
-    background-color = "#1e1e2e";
-    text-color = "#cdd6f4";
-    border-color = "#b4befe";
-    progress-color = "over #313244";
-
-    "urgency=high" = {
-      border-color = "#fab387";
-    };
-  };
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    # TODO add your custom bashrc here
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
     '';
@@ -200,117 +152,7 @@
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
     };
   };
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
 
-    colorschemes.catppuccin.enable = true;
-
-    plugins = {
-      lualine.enable = true;
-      barbar = {
-        enable = true;
-        keymaps = {
-          next = {
-            key = "<A-z>";
-          };
-          previous = {
-            key = "<A-x>";
-          };
-        };
-      };
-      web-devicons.enable = true;
-      treesitter.enable = true;
-
-      nvim-tree = {
-        enable = true;
-      };
-      lsp = {
-        enable = true;
-        servers = {
-          metals.enable = true;
-          nixd.enable = true;
-          pylsp.enable = true;
-          pyright.enable = true;
-        };
-      };
-
-      lsp-format = {
-        enable = true;
-        autoLoad = true;
-      };
-      cmp = {
-        enable = true;
-        autoEnableSources = true;
-        settings = {
-          sources = [
-            { name = "nvim_lsp"; }
-            { name = "path"; }
-            { name = "buffer"; }
-          ];
-          mapping = {
-            "<Tab>" = ''
-              cmp.mapping(
-                function(fallback)
-                  local col = vim.fn.col('.') - 1
-
-                  if cmp.visible() then
-                    cmp.select_next_item(select_opts)
-                  elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-                    fallback()
-                  else
-                    cmp.complete()
-                  end
-                end,
-                { "i", "s" }
-              )
-            '';
-          };
-          window = {
-            completion = {
-              border = "rounded";
-              winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
-              zindex = 1001;
-              scrolloff = 0;
-              colOffset = 0;
-              sidePadding = 1;
-              scrollbar = true;
-            };
-            documentation = {
-              border = "rounded";
-              winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
-              zindex = 1001;
-              maxHeight = 20;
-            };
-          };
-
-        };
-
-      };
-      telescope.enable = true;
-      neogit.enable = true;
-
-      coq-nvim.enable = true;
-
-      conform-nvim = {
-        enable = true;
-        settings = {
-          default_format_opts.lsp_format = "fallback";
-          formatters_by_ft = {
-            "nix" = [ "alejandra" ];
-            "typst" = [
-              "typstyle"
-              "injected"
-            ];
-            "sh" = [ "shfmt" ];
-            "python" = [ "black" ];
-          };
-        };
-      };
-    };
-  };
   home.file.".icons/default".source =
     "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
 

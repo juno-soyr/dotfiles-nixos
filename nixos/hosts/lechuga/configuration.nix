@@ -5,7 +5,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -24,7 +25,7 @@
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -89,8 +90,15 @@
   users.users.soyr = {
     isNormalUser = true;
     description = "soyr";
-    extraGroups = ["networkmanager" "wheel" "video"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+    ];
     packages = with pkgs; [
+      wget
+      git
+
       #   kdePackages.kate
     ];
   };
@@ -110,10 +118,6 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    git
-  ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
     nerd-fonts.symbols-only
@@ -138,7 +142,10 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

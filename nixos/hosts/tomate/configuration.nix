@@ -5,7 +5,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -81,10 +82,15 @@
   users.users.soyr = {
     isNormalUser = true;
     description = "soyr";
-    extraGroups = ["networkmanager" "wheel" "video"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+    ];
     packages = with pkgs; [
-      #   kdePackages.kate
       networkmanagerapplet
+      wget
+      git
     ];
   };
   environment.sessionVariables = {
@@ -103,11 +109,6 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    git
-  ];
   fonts.packages = with pkgs; [
     nerd-fonts.iosevka
     nerd-fonts.symbols-only
@@ -131,7 +132,10 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

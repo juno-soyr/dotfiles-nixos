@@ -216,12 +216,14 @@
 
       nvim-tree = {
         enable = true;
+
       };
       lsp = {
         enable = true;
         servers = {
           metals.enable = true;
           nixd.enable = true;
+          pylsp.enable = true;
         };
       };
 
@@ -293,6 +295,7 @@
               "injected"
             ];
             "sh" = [ "shfmt" ];
+            "python" = [ "black" ];
           };
         };
       };

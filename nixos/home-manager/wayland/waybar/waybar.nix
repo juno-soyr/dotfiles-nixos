@@ -3,7 +3,7 @@
   ...
 }:
 {
-  xdg.configFile."uair/uair.toml".source = ./wayland/waybar/uair.toml;
+  xdg.configFile."uair/uair.toml".source = ./uair.toml;
   programs.waybar = {
     enable = true;
 

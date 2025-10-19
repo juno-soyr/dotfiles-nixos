@@ -102,6 +102,9 @@
       #   kdePackages.kate
     ];
   };
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  users.extraGroups.vboxusers.members = [ "soyr" ];
   environment.sessionVariables = {
     # Workaround for cursor theme not being recognized
     XCURSOR_PATH = [

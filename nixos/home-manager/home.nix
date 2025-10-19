@@ -109,6 +109,11 @@
     thunderbird
     nixfmt-rfc-style
     protonmail-desktop
+    black
+    shfmt
+    typstyle
+    python3Packages.python-lsp-server
+    python3Packages.aiohttp
   ];
 
   # basic configuration of git, please change to your own
@@ -210,13 +215,22 @@
 
     plugins = {
       lualine.enable = true;
-      bufferline.enable = true;
+      barbar = {
+        enable = true;
+        keymaps = {
+          next = {
+            key = "<A-z>";
+          };
+          previous = {
+            key = "<A-x>";
+          };
+        };
+      };
       web-devicons.enable = true;
       treesitter.enable = true;
 
       nvim-tree = {
         enable = true;
-
       };
       lsp = {
         enable = true;
@@ -224,6 +238,7 @@
           metals.enable = true;
           nixd.enable = true;
           pylsp.enable = true;
+          pyright.enable = true;
         };
       };
 

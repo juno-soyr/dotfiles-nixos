@@ -7,7 +7,7 @@
       text-color = "#cdd6f4";
       border-color = "#b4befe";
       progress-color = "over #313244";
-
+      timeout = 5000;
       "urgency=high" = {
         border-color = "#fab387";
       };

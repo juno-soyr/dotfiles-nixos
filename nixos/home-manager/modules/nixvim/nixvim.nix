@@ -41,6 +41,7 @@
         enable = true;
         autoLoad = true;
       };
+      vimtex.enable = true;
       cmp = {
         enable = true;
         autoEnableSources = true;

@@ -37,10 +37,6 @@
         };
       };
 
-      lsp-format = {
-        enable = true;
-        autoLoad = true;
-      };
       cmp = {
         enable = true;
         autoEnableSources = true;
@@ -105,7 +101,9 @@
               "injected"
             ];
             "sh" = [ "shfmt" ];
-            "python" = [ "black" ];
+            "python" = [
+              "black"
+            ];
           };
         };
       };

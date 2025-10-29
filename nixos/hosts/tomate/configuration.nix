@@ -19,7 +19,8 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages;
-
+  # Display link drivers
+  boot.initrd.kernelModules = [ "evdi" ];
   networking.hostName = "tomate"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -52,7 +53,24 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   programs.sway.enable = true;
-
+  environment.variables = {
+    WLR_EVDI_RENDER_DEVICE = "/dev/dri/card1";
+  };
+  nixpkgs.overlays = [
+    (final: prev: {
+      wlroots_0_17 = prev.wlroots_0_17.overrideAttrs (old: {
+        # you may need to use 0_18
+        patches = (old.patches or [ ]) ++ [
+          (prev.fetchpatch {
+            url = "https://gitlab.freedesktop.org/wlroots/wlroots/uploads/bd115aa120d20f2c99084951589abf9c/DisplayLink_v2.patch";
+            hash = "sha256-vWQc2e8a5/YZaaHe+BxfAR/Ni8HOs2sPJ8Nt9pfxqiE=";
+          })
+        ];
+      });
+    })
+  ];
+  services.xserver.videoDrivers = [ "displaylink" ];
+  systemd.services.dlm.wantedBy = [ "multi-user.target" ];
   # Configure console keymap
   console.keyMap = "us";
 
@@ -93,6 +111,7 @@
       git
     ];
   };
+  environment.systemPackages = with pkgs; [ displaylink ];
   environment.sessionVariables = {
     # Workaround for cursor theme not being recognized
     XCURSOR_PATH = [

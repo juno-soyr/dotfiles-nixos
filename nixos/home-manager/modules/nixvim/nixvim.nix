@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.nixvim = {
     enable = true;
@@ -23,7 +23,7 @@
       };
       web-devicons.enable = true;
       treesitter.enable = true;
-
+      remote-nvim.enable = true;
       nvim-tree = {
         enable = true;
       };
@@ -34,6 +34,11 @@
           nixd.enable = true;
           pylsp.enable = true;
           pyright.enable = true;
+          jdtls.enable = true;
+          ltex = {
+            enable = true;
+          };
+
         };
       };
 
@@ -41,7 +46,10 @@
         enable = true;
         autoLoad = true;
       };
-      vimtex.enable = true;
+      vimtex = {
+        enable = true;
+        texlivePackage = pkgs.texlive.combined.scheme-full;
+      };
       cmp = {
         enable = true;
         autoEnableSources = true;

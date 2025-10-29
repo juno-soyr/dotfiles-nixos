@@ -5,8 +5,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -25,8 +24,7 @@
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
     open = true;
@@ -39,7 +37,7 @@
   time.timeZone = "Europe/Amsterdam";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "es_ES.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "nl_NL.UTF-8";
@@ -104,7 +102,9 @@
   };
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
-  users.extraGroups.vboxusers.members = [ "soyr" ];
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.draganddrop = true;
+  users.extraGroups.vboxusers.members = ["soyr"];
   environment.sessionVariables = {
     # Workaround for cursor theme not being recognized
     XCURSOR_PATH = [

@@ -114,7 +114,9 @@
               "injected"
             ];
             "sh" = [ "shfmt" ];
-            "python" = [ "black" ];
+            "python" = [
+              "black"
+            ];
           };
         };
       };

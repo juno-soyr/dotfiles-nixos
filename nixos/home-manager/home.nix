@@ -120,6 +120,7 @@
     typstyle
     python3Packages.python-lsp-server
     python3Packages.aiohttp
+    lutris
   ];
 
   # basic configuration of git

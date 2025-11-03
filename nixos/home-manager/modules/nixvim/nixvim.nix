@@ -14,10 +14,10 @@
         enable = true;
         keymaps = {
           next = {
-            key = "<A-z>";
+            key = "<A-x>";
           };
           previous = {
-            key = "<A-x>";
+            key = "<A-z>";
           };
         };
       };

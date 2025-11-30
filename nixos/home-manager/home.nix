@@ -2,8 +2,7 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     ./wayland
     ./modules
@@ -26,7 +25,6 @@
   };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-
     # Gnome tests
     gnomeExtensions.user-themes
     gnomeExtensions.tray-icons-reloaded
@@ -179,8 +177,7 @@
     };
   };
 
-  home.file.".icons/default".source =
-    "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
+  home.file.".icons/default".source = "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

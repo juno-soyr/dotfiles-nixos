@@ -1,8 +1,8 @@
 {
   pkgs,
-  inputs,
   ...
-}: {
+}:
+{
   programs.anyrun = {
     enable = true;
     config = {
@@ -26,13 +26,13 @@
         Config(
           desktop_actions: false,
           max_entries: 5,
-          terminal: Some("ghostty"),
+          terminal: Some("alacritty"),
         )
       '';
 
       "shell.ron".text = ''
         Config(
-          prefix: ">"
+          prefix: ":>"
         )
       '';
     };

@@ -109,6 +109,7 @@
       networkmanagerapplet
       wget
       git
+      grim
     ];
   };
   environment.systemPackages = with pkgs; [ displaylink ];

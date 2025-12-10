@@ -142,20 +142,20 @@
       enable = true;
       timeouts = [
         {
-          timeout = 30; # in seconds
-          command = "/etc/profiles/per-user/soyr/bin/notify-send 'Locking in 5 seconds' -t 5000";
+          timeout = 250; # in seconds
+          command = "/etc/profiles/per-user/soyr/bin/notify-send 'Locking in 20 seconds' -t 20000";
         }
         {
-          timeout = 35;
+          timeout = 270;
           command = lock;
         }
         {
-          timeout = 45;
+          timeout = 500;
           command = display "off";
           resumeCommand = display "on";
         }
         {
-          timeout = 45;
+          timeout = 510;
           command = "${pkgs.systemd}/bin/systemctl suspend";
         }
       ];

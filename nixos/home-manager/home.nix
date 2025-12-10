@@ -2,17 +2,16 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     ./wayland
     ./modules
     inputs.nixvim.homeModules.nixvim
+    inputs.nix-doom-emacs-unstraightened.hmModule
   ];
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
   services.gnome-keyring.enable = true;
-  services.swww.enable = true;
   gtk = {
     enable = true;
     theme = {
@@ -26,7 +25,6 @@
   };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-
     # Gnome tests
     gnomeExtensions.user-themes
     gnomeExtensions.tray-icons-reloaded
@@ -122,9 +120,62 @@
     python3Packages.aiohttp
     lutris
   ];
-
+  programs.doom-emacs = {
+    enable = true;
+    doomDir = ./doom.d;
+  };
   # basic configuration of git
-
+  services.swayidle = let
+    # Lock command
+    lock = "${pkgs.swaylock}/bin/swaylock --daemonize";
+    # TODO: modify "display" function based on your window manager
+    # Sway
+    # display = status: "${pkgs.sway}/bin/swaymsg 'output * power ${status}'";
+    # Hyprland
+    # display = status: "hyprctl dispatch dpms ${status}";
+    # Niri
+    display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
+  in {
+    enable = true;
+    timeouts = [
+      {
+        timeout = 15; # in seconds
+        command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds' -t 5000";
+      }
+      {
+        timeout = 20;
+        command = lock;
+      }
+      {
+        timeout = 25;
+        command = display "off";
+        resumeCommand = display "on";
+      }
+      {
+        timeout = 30;
+        command = "${pkgs.systemd}/bin/systemctl suspend";
+      }
+    ];
+    events = [
+      {
+        event = "before-sleep";
+        # adding duplicated entries for the same event may not work
+        command = (display "off") + "; " + lock;
+      }
+      {
+        event = "after-resume";
+        command = display "on";
+      }
+      {
+        event = "lock";
+        command = (display "off") + "; " + lock;
+      }
+      {
+        event = "unlock";
+        command = display "on";
+      }
+    ];
+  };
   programs.git = {
     enable = true;
     userName = "juno-soyr";
@@ -179,8 +230,7 @@
     };
   };
 
-  home.file.".icons/default".source =
-    "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
+  home.file.".icons/default".source = "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

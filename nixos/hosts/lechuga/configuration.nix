@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -117,6 +118,9 @@
       "${config.system.path}"
     ];
   };
+  environment.systemPackages = [
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+  ];
   # Allow unfree package
   nixpkgs.config.allowUnfree = true;
 

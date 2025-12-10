@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./wayland
     ./modules
@@ -125,57 +126,59 @@
     doomDir = ./doom.d;
   };
   # basic configuration of git
-  services.swayidle = let
-    # Lock command
-    lock = "${pkgs.swaylock}/bin/swaylock --daemonize";
-    # TODO: modify "display" function based on your window manager
-    # Sway
-    # display = status: "${pkgs.sway}/bin/swaymsg 'output * power ${status}'";
-    # Hyprland
-    # display = status: "hyprctl dispatch dpms ${status}";
-    # Niri
-    display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
-  in {
-    enable = true;
-    timeouts = [
-      {
-        timeout = 15; # in seconds
-        command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds' -t 5000";
-      }
-      {
-        timeout = 20;
-        command = lock;
-      }
-      {
-        timeout = 25;
-        command = display "off";
-        resumeCommand = display "on";
-      }
-      {
-        timeout = 30;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
-      }
-    ];
-    events = [
-      {
-        event = "before-sleep";
-        # adding duplicated entries for the same event may not work
-        command = (display "off") + "; " + lock;
-      }
-      {
-        event = "after-resume";
-        command = display "on";
-      }
-      {
-        event = "lock";
-        command = (display "off") + "; " + lock;
-      }
-      {
-        event = "unlock";
-        command = display "on";
-      }
-    ];
-  };
+  services.swayidle =
+    let
+      # Lock command
+      lock = "${pkgs.swaylock}/bin/swaylock --daemonize";
+      # TODO: modify "display" function based on your window manager
+      # Sway
+      # display = status: "${pkgs.sway}/bin/swaymsg 'output * power ${status}'";
+      # Hyprland
+      # display = status: "hyprctl dispatch dpms ${status}";
+      # Niri
+      display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
+    in
+    {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 30; # in seconds
+          command = "/etc/profiles/per-user/soyr/bin/notify-send 'Locking in 5 seconds' -t 5000";
+        }
+        {
+          timeout = 35;
+          command = lock;
+        }
+        {
+          timeout = 45;
+          command = display "off";
+          resumeCommand = display "on";
+        }
+        {
+          timeout = 45;
+          command = "${pkgs.systemd}/bin/systemctl suspend";
+        }
+      ];
+      events = [
+        {
+          event = "before-sleep";
+          # adding duplicated entries for the same event may not work
+          command = (display "off") + "; " + lock;
+        }
+        {
+          event = "after-resume";
+          command = display "on";
+        }
+        {
+          event = "lock";
+          command = (display "off") + "; " + lock;
+        }
+        {
+          event = "unlock";
+          command = display "on";
+        }
+      ];
+    };
   programs.git = {
     enable = true;
     userName = "juno-soyr";
@@ -230,7 +233,8 @@
     };
   };
 
-  home.file.".icons/default".source = "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
+  home.file.".icons/default".source =
+    "${pkgs.volantes-cursors-material}/share/icons/volantes_cursors";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

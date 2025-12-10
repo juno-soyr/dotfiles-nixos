@@ -1,5 +1,4 @@
 {
-
   description = "NixOS-soyr";
 
   inputs = {
@@ -23,69 +22,66 @@
     # Required, nvf works best and only directly supports flakes
     nixvim.url = "github:nix-community/nixvim/nixos-25.05";
     awww.url = "git+https://codeberg.org/LGFae/awww";
+    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+    # Optional, to download less. Neither the module nor the overlay uses this input.
+    nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      cursor-theme,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations = {
-        lechuga = nixpkgs.lib.nixosSystem rec {
-          specialArgs = { inherit inputs; };
-          modules = [
-            (
-              {
-                ...
-              }:
-              {
-                nixpkgs.overlays = [
-                  cursor-theme.overlay
-                ];
-              }
-            )
-            ./hosts/lechuga/configuration.nix
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-
-              home-manager.users.soyr = import ./home-manager/home.nix;
-              home-manager.backupFileExtension = "backup-lechuga";
-
-              home-manager.extraSpecialArgs = specialArgs;
+  outputs = {
+    nixpkgs,
+    home-manager,
+    cursor-theme,
+    nix-doom-emacs-unstraightened,
+    ...
+  } @ inputs: {
+    nixosConfigurations = {
+      lechuga = nixpkgs.lib.nixosSystem rec {
+        specialArgs = {inherit inputs;};
+        modules = [
+          (
+            {...}: {
+              nixpkgs.overlays = [
+                cursor-theme.overlay
+                nix-doom-emacs-unstraightened.overlays.default
+              ];
             }
-          ];
-        };
-        tomate = nixpkgs.lib.nixosSystem rec {
-          specialArgs = { inherit inputs; };
-          modules = [
-            (
-              {
-                ...
-              }:
-              {
-                nixpkgs.overlays = [
-                  cursor-theme.overlay
-                ];
-              }
-            )
-            ./hosts/tomate/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+          )
+          ./hosts/lechuga/configuration.nix
 
-              home-manager.users.soyr = import ./home-manager/home.nix;
-              home-manager.backupFileExtension = "backup-tomate";
-              home-manager.extraSpecialArgs = specialArgs;
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.soyr = import ./home-manager/home.nix;
+            home-manager.backupFileExtension = "backup-lechuga";
+
+            home-manager.extraSpecialArgs = specialArgs;
+          }
+        ];
+      };
+      tomate = nixpkgs.lib.nixosSystem rec {
+        specialArgs = {inherit inputs;};
+        modules = [
+          (
+            {...}: {
+              nixpkgs.overlays = [
+                cursor-theme.overlay
+              ];
             }
-          ];
-        };
+          )
+          ./hosts/tomate/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.soyr = import ./home-manager/home.nix;
+            home-manager.backupFileExtension = "backup-tomate";
+            home-manager.extraSpecialArgs = specialArgs;
+          }
+        ];
       };
     };
+  };
 }

@@ -7,6 +7,7 @@
     ./wayland
     ./modules
     inputs.nixvim.homeModules.nixvim
+    inputs.nix-doom-emacs-unstraightened.hmModule
   ];
   home.username = "soyr";
   home.homeDirectory = "/home/soyr";
@@ -119,7 +120,10 @@
     python3Packages.aiohttp
     lutris
   ];
-
+  programs.doom-emacs = {
+    enable = true;
+    doomDir = ./doom.d;
+  };
   # basic configuration of git
   services.swayidle = let
     # Lock command

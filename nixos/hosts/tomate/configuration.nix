@@ -111,7 +111,9 @@
       git
     ];
   };
-  environment.systemPackages = with pkgs; [ displaylink ];
+  environment.systemPackages = with pkgs; [
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+  ];
   environment.sessionVariables = {
     # Workaround for cursor theme not being recognized
     XCURSOR_PATH = [

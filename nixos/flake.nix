@@ -22,6 +22,7 @@
 
     # Required, nvf works best and only directly supports flakes
     nixvim.url = "github:nix-community/nixvim/nixos-25.05";
+    awww.url = "git+https://codeberg.org/LGFae/awww";
   };
 
   outputs =

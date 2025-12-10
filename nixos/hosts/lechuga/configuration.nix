@@ -4,8 +4,10 @@
 {
   config,
   pkgs,
+  inputs,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -24,7 +26,7 @@
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
     open = true;
@@ -104,7 +106,7 @@
   virtualisation.virtualbox.host.enableExtensionPack = true;
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.draganddrop = true;
-  users.extraGroups.vboxusers.members = ["soyr"];
+  users.extraGroups.vboxusers.members = [ "soyr" ];
   environment.sessionVariables = {
     # Workaround for cursor theme not being recognized
     XCURSOR_PATH = [
@@ -116,6 +118,9 @@
       "${config.system.path}"
     ];
   };
+  environment.systemPackages = [
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+  ];
   # Allow unfree package
   nixpkgs.config.allowUnfree = true;
 
